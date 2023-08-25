@@ -57,6 +57,9 @@ function pickRandom(arr) {
 function generatePassword() {
   var options = givemeaPassword();
   var currentArr = new Array()
+  if (options.hasBigChar) {
+    currentArr= currentArr.concat(bigChar)
+  }
   if (options.hasSpecialChar) {
     currentArr= currentArr.concat(specialChar)
   }
@@ -65,9 +68,6 @@ function generatePassword() {
   }
   if (options.hasSmallChar) {
     currentArr= currentArr.concat(smallChar)
-  }
-  if(options.hasBigChar) {
-    currentArr= currentArr.concat(bigChar)
   }
   console.log(currentArr)
 
@@ -78,6 +78,8 @@ function generatePassword() {
     i++ 
   } 
   return password;
+
+  console.log(currentArr)
 }
 // Write password to the #password input
 function writePassword() {
@@ -90,5 +92,3 @@ function writePassword() {
 
   //Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
-
-  generateBtn.addEventListener("click", generatePassword);
