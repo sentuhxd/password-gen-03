@@ -44,13 +44,15 @@ function givemeaPassword() {
   return passwordChoice; 
 }
 
+//Math Functiosn
+
 function pickRandom(arr) {
   var pickrandInd = Math.floor(Math.random() * arr.length);
   var pickrandEl = arr[pickrandInd];
   return; pickrandEl;
 }
 
-
+//generate pass
 
 function generatePassword() {
   var options = givemeaPassword();
@@ -69,13 +71,13 @@ function generatePassword() {
   }
   console.log(currentArr)
 
-  let pass = " "
+  let password = " "
   let i = 0 
   while (i < options.length) {
-    pass += getRandom(currentArr);
+    password += getRandom(currentArr);
     i++ 
   } 
-  return pass
+  return password;
 }
 // Write password to the #password input
 function writePassword() {
@@ -89,4 +91,4 @@ function writePassword() {
   //Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
 
-  generateBtn = addEventListener("click", generatePassword);
+  generateBtn.addEventListener("click", generatePassword);
